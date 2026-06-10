@@ -106,7 +106,11 @@ void STOCK::RealTimeData::Load(std::wstring key, std::vector<std::string> data_a
     sprintf_s(buff, "%.3f", currentPrice);
     displayPrice = CCommon::StrToUnicode(buff);
 
-    sprintf_s(buff, "%.2f%%", ((currentPrice - prevClosePrice) / prevClosePrice * 100));
+    float pct = ((currentPrice - prevClosePrice) / prevClosePrice * 100);
+    if (pct >= 0)
+      sprintf_s(buff, " %.2f%%", pct);
+    else
+      sprintf_s(buff, "%.2f%%", pct);
     displayFluctuation = CCommon::StrToUnicode(buff);
   }
 }
