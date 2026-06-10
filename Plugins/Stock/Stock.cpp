@@ -156,7 +156,7 @@ const wchar_t *Stock::GetInfo(PluginInfoIndex index)
     case ITMPlugin::TMI_URL:
         return L"https://github.com/zhongyang219/TrafficMonitorPlugins";
     case TMI_VERSION:
-        return L"1.14";
+        return L"1.15";
     default:
         break;
     }
